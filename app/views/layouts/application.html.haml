@@ -6,9 +6,16 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' 
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 %body
-    - Category.all.each do |category|
-        = link_to category.name, tasks_path(category: category.name)
-    
+    %nav.navbar.navbar-default
+        .container
+            .navbar-brand.navbar-link 
+                =link_to "TaskRabbit", root_path
+            %ul.nav.navbar-nav
+                %li= link_to "All Tasks", root_path
+                - Category.all.each do |category|
+                    %li= link_to category.name, tasks_path(category: category.name)
+                %li= link_to "New Task", new_task_path, class: "nav navbar-nav navbar-right navbar-link"
+.container
     = yield
 
 

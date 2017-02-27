@@ -4,8 +4,8 @@
 %br/
 %p= @task.company
 
-= link_to "Home", root_path 
+%button.btn.btn-default= link_to "Home", root_path 
 |
-= link_to "Edit", edit_task_path(@task)
+%button.btn.btn-default= link_to "Edit", edit_task_path(@task)
 |
-= link_to "Delete", task_path(@task), method: :delete, data: {confirm: "Are you sure you want to delete task?"}
+%button.btn.btn-default= link_to "Delete", task_path(@task), method: :delete, data: {confirm: "Are you sure you want to delete task?"}
